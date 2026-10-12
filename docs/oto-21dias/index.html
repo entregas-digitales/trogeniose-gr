@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Πρόγραμμα Έναρξης 21 Ημερών — Αντιφλεγμονώδης Διατροφή</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#fff;font-family:'Nunito',sans-serif;color:#16233b;line-height:1.5}
+:root{--green:#1fa35a;--green-dark:#178048;--green-soft:#eaf8ef;--navy:#16233b;--yellow:#ffc93c;--yellow-dark:#e6a800;--red:#e8395b;--ink-soft:#6b7280;--border:#e7e9ee}
+
+/* TOPBAR */
+.oto-topbar{background:#16233b;color:#fff;text-align:center;padding:10px 20px;font-size:13px;font-weight:700;letter-spacing:.3px}
+.oto-topbar span{color:#ffc93c}
+
+/* HERO */
+.oto-hero{background:linear-gradient(135deg,#0f1d30 0%,#1a3d2b 100%);color:#fff;padding:36px 20px 28px;text-align:center}
+.oto-hero .badge{display:inline-block;background:#ffc93c;color:#000;font-weight:800;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:16px}
+.oto-hero h1{font-family:'Baloo 2',sans-serif;font-size:clamp(22px,5vw,34px);line-height:1.2;max-width:580px;margin:0 auto 16px}
+.oto-hero h1 em{color:#ffc93c;font-style:normal}
+.oto-hero p{font-size:15px;opacity:.88;max-width:500px;margin:0 auto 24px}
+.oto-cover{width:160px;border-radius:12px;box-shadow:0 16px 40px rgba(0,0,0,.45);margin:0 auto 24px;display:block}
+.oto-timer{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border-radius:8px;padding:8px 16px;font-size:13px;font-weight:700;color:#ffc93c}
+
+/* WHAT YOU GET */
+.oto-section{max-width:580px;margin:0 auto;padding:28px 20px}
+.oto-what h2{font-family:'Baloo 2',sans-serif;font-size:22px;color:#16233b;text-align:center;margin-bottom:20px}
+.oto-bullets{list-style:none;display:flex;flex-direction:column;gap:12px}
+.oto-bullets li{display:flex;align-items:flex-start;gap:12px;background:#f6faf8;border-radius:10px;padding:14px 16px;border:1px solid #d0eedd}
+.oto-bullets li .icon{font-size:22px;flex-shrink:0;margin-top:2px}
+.oto-bullets li .text strong{display:block;font-weight:800;color:#16233b;font-size:14px;margin-bottom:2px}
+.oto-bullets li .text span{font-size:13px;color:#6b7280}
+
+/* PRICE BOX */
+.oto-price-box{background:linear-gradient(135deg,#0f1d30,#1a3d2b);border-radius:16px;padding:28px 24px;text-align:center;color:#fff;margin:0 20px 24px}
+.oto-price-box .label{font-size:12px;letter-spacing:1px;text-transform:uppercase;opacity:.7;margin-bottom:8px}
+.oto-price-box .original{font-size:16px;color:#ffc93c;text-decoration:line-through;opacity:.7;margin-bottom:4px}
+.oto-price-box .current{font-family:'Baloo 2',sans-serif;font-size:52px;font-weight:800;color:#fff;line-height:1;margin-bottom:4px}
+.oto-price-box .current small{font-size:22px;vertical-align:super}
+.oto-price-box .pill{display:inline-block;background:#1fa35a;border-radius:100px;font-size:13px;font-weight:800;padding:5px 14px;margin-top:8px}
+.oto-price-box .note{font-size:12px;opacity:.65;margin-top:10px}
+
+/* BUTTONS */
+.oto-yes{display:block;width:calc(100% - 40px);max-width:540px;margin:0 auto 10px;background:#ffc93c;color:#000;font-family:'Baloo 2',sans-serif;font-weight:800;font-size:18px;padding:18px 20px;border-radius:14px;border:none;cursor:pointer;text-align:center;text-decoration:none;box-shadow:0 6px 0 #e6a800;transition:transform .1s,box-shadow .1s}
+.oto-yes:active{transform:translateY(3px);box-shadow:0 3px 0 #e6a800}
+.oto-no{display:block;text-align:center;font-size:12px;color:#9ca3af;text-decoration:underline;cursor:pointer;margin:8px auto 28px;padding:4px}
+.oto-no:hover{color:#6b7280}
+
+/* TRUST */
+.oto-trust{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;padding:16px 20px 28px;max-width:480px;margin:0 auto}
+.oto-trust div{display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:600}
+.oto-trust .icon{font-size:16px}
+
+/* WHAT'S INSIDE */
+.oto-inside{background:#f6faf8;padding:28px 0}
+.oto-inside h2{font-family:'Baloo 2',sans-serif;font-size:20px;color:#16233b;text-align:center;margin-bottom:20px;padding:0 20px}
+.oto-week{max-width:540px;margin:0 auto;padding:0 20px;display:flex;flex-direction:column;gap:10px}
+.oto-week-card{background:#fff;border-radius:12px;border:1px solid #d0eedd;padding:14px 16px}
+.oto-week-card .week-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#1fa35a;margin-bottom:4px}
+.oto-week-card .week-title{font-weight:800;font-size:14px;color:#16233b;margin-bottom:4px}
+.oto-week-card .week-desc{font-size:13px;color:#6b7280}
+
+/* FINAL CTA */
+.oto-final{background:#16233b;padding:32px 20px;text-align:center;color:#fff}
+.oto-final h3{font-family:'Baloo 2',sans-serif;font-size:20px;margin-bottom:8px}
+.oto-final p{font-size:14px;opacity:.8;margin-bottom:20px;max-width:420px;margin-left:auto;margin-right:auto}
+
+@media(max-width:480px){
+  .oto-hero h1{font-size:21px}
+  .oto-price-box .current{font-size:44px}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="oto-topbar">⚡ Αυτή η προσφορά ισχύει <span>μόνο αυτή τη στιγμή</span> — δεν θα επανεμφανιστεί</div>
+
+<!-- HERO -->
+<div class="oto-hero">
+  <div class="badge">🎁 Μία φορά · Μόνο τώρα</div>
+  <img class="oto-cover" src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/trnk-main-gr.png" alt="Πρόγραμμα 21 Ημερών">
+  <h1>Ξέρεις <em>ακριβώς</em> τι να φας τις πρώτες 21 μέρες — χωρίς εικασίες</h1>
+  <p>Το βήμα-βήμα πρόγραμμα που μετατρέπει τις 700+ συνταγές σου σε πλάνο για την πρώτη εβδομάδα, τη δεύτερη και την τρίτη. Ξεκινάς αύριο.</p>
+</div>
+
+<!-- WHAT YOU GET -->
+<div class="oto-section oto-what">
+  <h2>Τι περιλαμβάνει το Πρόγραμμα 21 Ημερών</h2>
+  <ul class="oto-bullets">
+    <li>
+      <span class="icon">📅</span>
+      <div class="text">
+        <strong>3 εβδομαδιαία πλάνα γευμάτων</strong>
+        <span>Πρωινό, μεσημεριανό, βραδινό — τίποτα δεν σου λείπει</span>
+      </div>
+    </li>
+    <li>
+      <span class="icon">🛒</span>
+      <div class="text">
+        <strong>3 λίστες αγορών (μία ανά εβδομάδα)</strong>
+        <span>Πήγαινε στο σούπερ μάρκετ με ακριβή λίστα, χωρίς αμφιβολία</span>
+      </div>
+    </li>
+    <li>
+      <span class="icon">🌿</span>
+      <div class="text">
+        <strong>21 αντιφλεγμονώδεις επιλογές ανά ημέρα</strong>
+        <span>Από τις 700+ συνταγές, επιλέξαμε τις πιο εύκολες για αρχάριους</span>
+      </div>
+    </li>
+    <li>
+      <span class="icon">📖</span>
+      <div class="text">
+        <strong>Οδηγός για τα πρώτα συμπτώματα βελτίωσης</strong>
+        <span>Τι θα νιώσεις τη μέρα 3, τη μέρα 7, τη μέρα 14 — για να μείνεις σταθερή</span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- PRICE BOX -->
+<div class="oto-price-box">
+  <div class="label">Τιμή Μόνο Γι' Αυτή την Προσφορά</div>
+  <div class="original">Κανονική τιμή €27,00</div>
+  <div class="current"><small>€</small>9<small>,90</small></div>
+  <div class="pill">— 63% έκπτωση —</div>
+  <div class="note">Μόνο ένα click · Χωρίς εισαγωγή κάρτας ξανά</div>
+</div>
+
+<!-- CTA YES -->
+<a class="oto-yes" href="https://trogeniose.impultienda.ar/checkout">
+  ✅ ΝΑΙ — Θέλω το Πρόγραμμα 21 Ημερών για €9,90
+</a>
+
+<!-- TRUST -->
+<div class="oto-trust">
+  <div><span class="icon">🔒</span> Ασφαλής πληρωμή</div>
+  <div><span class="icon">⚡</span> Άμεση πρόσβαση</div>
+  <div><span class="icon">🛡️</span> Εγγύηση 7 ημερών</div>
+</div>
+
+<!-- NO THANKS -->
+<a class="oto-no" href="https://trogeniose.impultienda.ar/">Όχι ευχαριστώ, δεν θέλω το πρόγραμμα 21 ημερών</a>
+
+<!-- WHAT'S INSIDE -->
+<div class="oto-inside">
+  <h2>📋 Τι κάνεις κάθε εβδομάδα</h2>
+  <div class="oto-week">
+    <div class="oto-week-card">
+      <div class="week-label">Εβδομάδα 1 · Μέρες 1-7</div>
+      <div class="week-title">Η αρχή — Αντικατάσταση & Ρύθμιση</div>
+      <div class="week-desc">Εντοπίζεις τα 3 τρόφιμα που φέρνουν φλεγμονή και τα αντικαθιστάς με εύκολες επιλογές. Λίστα αγορών ετοιμη.</div>
+    </div>
+    <div class="oto-week-card">
+      <div class="week-label">Εβδομάδα 2 · Μέρες 8-14</div>
+      <div class="week-title">Εμπέδωση — Ρουτίνα χωρίς σκέψη</div>
+      <div class="week-desc">Αυξάνεις την ποικιλία χωρίς να χάνεις χρόνο. Συνταγές μαζικού μαγειρέματος για να τρως υγιεινά όλη την εβδομάδα.</div>
+    </div>
+    <div class="oto-week-card">
+      <div class="week-label">Εβδομάδα 3 · Μέρες 15-21</div>
+      <div class="week-title">Αυτονομία — Γίνεται συνήθεια</div>
+      <div class="week-desc">Ξέρεις ήδη τι δουλεύει για σένα. Η τρίτη εβδομάδα σε προετοιμάζει να συνεχίσεις μόνη σου — χωρίς πλάνο.</div>
+    </div>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<div class="oto-final">
+  <h3>Ξεκίνα αύριο με σαφές πλάνο</h3>
+  <p>Έχεις ήδη τις 700+ συνταγές. Αυτό το πρόγραμμα σε λέει ποια να φας πρώτα — και σε ποιά σειρά — για να νιώσεις τη διαφορά στις πρώτες 7 μέρες.</p>
+  <a class="oto-yes" href="https://trogeniose.impultienda.ar/checkout" style="max-width:480px;">
+    ✅ ΝΑΙ — Θέλω το Πρόγραμμα 21 Ημερών για €9,90
+  </a>
+  <div style="margin-top:12px">
+    <a class="oto-no" href="https://trogeniose.impultienda.ar/" style="color:#9ca3af">Όχι ευχαριστώ, παράβλεψε αυτή την προσφορά</a>
+  </div>
+</div>
+
+</body>
+</html>
