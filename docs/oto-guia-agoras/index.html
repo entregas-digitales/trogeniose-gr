@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Οδηγός Αντιφλεγμονώδους Αγοράς</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #0d1f1a; color: #f0ede6; font-family: 'Georgia', serif; }
+
+  .banner {
+    background: #c8451a;
+    color: #fff;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-family: sans-serif;
+    letter-spacing: .5px;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 48px 20px 32px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px);
+    line-height: 1.25;
+    color: #e8d5a0;
+    margin-bottom: 16px;
+  }
+  .hero .sub {
+    font-size: 18px;
+    color: #a8c4a0;
+    margin-bottom: 28px;
+  }
+
+  .price-box {
+    background: #162920;
+    border: 2px solid #3a7a5a;
+    border-radius: 16px;
+    max-width: 480px;
+    margin: 0 auto 32px;
+    padding: 28px 24px;
+    text-align: center;
+  }
+  .price-old {
+    font-size: 16px;
+    color: #888;
+    text-decoration: line-through;
+    font-family: sans-serif;
+  }
+  .price-now {
+    font-size: 52px;
+    font-weight: bold;
+    color: #e8d5a0;
+    line-height: 1.1;
+    margin: 8px 0;
+  }
+  .price-label {
+    font-size: 13px;
+    color: #7aaa8a;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .bullets {
+    list-style: none;
+    max-width: 520px;
+    margin: 0 auto 36px;
+    text-align: left;
+    padding: 0 20px;
+  }
+  .bullets li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 14px;
+    color: #d8d0c4;
+  }
+  .bullets li::before {
+    content: "✓";
+    color: #5aba80;
+    font-weight: bold;
+    flex-shrink: 0;
+    font-size: 18px;
+    margin-top: 1px;
+  }
+
+  .btn-yes {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto 16px;
+    background: #2e7d32;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 20px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: sans-serif;
+    cursor: pointer;
+    letter-spacing: .3px;
+    line-height: 1.3;
+  }
+  .btn-yes:hover { background: #256427; }
+
+  .btn-no {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto 40px;
+    background: transparent;
+    color: #888;
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    font-family: sans-serif;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .btn-no:hover { color: #aaa; }
+
+  .guarantee {
+    text-align: center;
+    font-size: 13px;
+    color: #6a8870;
+    font-family: sans-serif;
+    padding-bottom: 40px;
+  }
+
+  @media (max-width: 520px) {
+    .hero { padding: 32px 16px 24px; }
+    .price-now { font-size: 40px; }
+    .btn-yes { font-size: 16px; padding: 18px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="banner">⚡ ΕΙΔΙΚΗ ΠΡΟΣΦΟΡΑ — Μόνο για αγοραστές του Τρώγε & Νιώσε Καλά</div>
+
+<div class="hero">
+  <p class="sub">Ένα βήμα ακόμα πριν τελειώσεις:</p>
+  <h1>Ο Πλήρης Οδηγός Αντιφλεγμονώδους Αγοράς — Τι να βάζεις στο καλάθι και τι να αφήνεις στο ράφι</h1>
+</div>
+
+<div class="price-box">
+  <div class="price-old">€29,00</div>
+  <div class="price-now">€14,90</div>
+  <div class="price-label">Εφάπαξ πληρωμή · Πρόσβαση δια βίου</div>
+</div>
+
+<ul class="bullets">
+  <li>Λίστα με 80+ τρόφιμα που μειώνουν τη φλεγμονή — οργανωμένη ανά κατηγορία σούπερ μάρκετ</li>
+  <li>Τι να διαβάζεις στις ετικέτες: 12 συστατικά που κρύβονται στα «υγιεινά» προϊόντα και επιδεινώνουν τη φλεγμονή</li>
+  <li>Εβδομαδιαία λίστα αγορών έτοιμη για αντιγραφή — για 1, 2 ή 4 άτομα</li>
+  <li>Εναλλακτικές για κάθε προϋπολογισμό: τι αγοράζεις φρέσκο, τι κατεψυγμένο, τι σε κονσέρβα</li>
+  <li>Χάρτης αγοράς: ποιες ενότητες του σούπερ μάρκετ να προτιμάς και ποιες να αποφεύγεις</li>
+</ul>
+
+<button class="btn-yes" data-pp-accept>
+  ΝΑΙ, θέλω τον Οδηγό Αγοράς — μόνο €14,90
+</button>
+
+<button class="btn-no" data-pp-decline>
+  Όχι ευχαριστώ, ξέρω ήδη τι να αγοράζω
+</button>
+
+<p class="guarantee">🔒 Εγγύηση επιστροφής χρημάτων 7 ημερών · Ασφαλής πληρωμή</p>
+
+</body>
+</html>
