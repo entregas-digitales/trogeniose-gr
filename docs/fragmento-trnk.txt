@@ -263,7 +263,7 @@ html{scroll-behavior:smooth}
 <!-- TICKER -->
 <div class="trnk-tick" aria-label="Πλεονεκτήματα">
 <div class="trnk-tick-track" id="trnkTickTrack">
-<p class="trnk-tick-item">🌿 700+ Αντιφλεγμονώδεις Συνταγές</p>
+<p class="trnk-tick-item">🌿 28 Αντιφλεγμονώδεις Συνταγές</p>
 <p class="trnk-tick-item">🌾 Χωρίς Ζάχαρη &amp; Χωρίς Γλουτένη</p>
 <p class="trnk-tick-item">🎁 9 Δωρεάν Οδηγοί Με Κάθε Αγορά</p>
 <p class="trnk-tick-item">📩 Άμεση Πρόσβαση Μέσω Email</p>
@@ -279,12 +279,12 @@ html{scroll-behavior:smooth}
 <!-- 1. HERO -->
 <section class="trnk-hero">
 <div class="trnk-wrap">
-<span class="trnk-eyebrow">🌿 700+ Συνταγές · 9 Δωρεάν Οδηγοί σε 1 Αγορά</span>
+<span class="trnk-eyebrow">🌿 28 Συνταγές · 9 Δωρεάν Οδηγοί σε 1 Αγορά</span>
 <div style="margin:10px auto 0;display:inline-flex;align-items:center;gap:8px;background:#FFF4D6;border:1px solid #FFE3A0;color:#7a5600;font-size:12px;font-weight:800;padding:6px 14px;border-radius:999px;">⭐ +3.500 λήψεις · 4,9/5</div>
 <h1>Πες αντίο στη φλεγμονή με <span class="trnk-hl">εύκολες & νόστιμες συνταγές</span> που σε βοηθούν να νιώθεις <span class="trnk-hl">πιο ελαφριά</span> από τις πρώτες μέρες</h1>
-<p class="trnk-sub">700+ γρήγορες αντιφλεγμονώδεις συνταγές χωρίς ζάχαρη & γλουτένη — για να σταματήσεις να ταλαιπωρείσαι σκεφτόμενη τι να μαγειρέψεις.</p>
+<p class="trnk-sub">28 αντιφλεγμονώδεις συνταγές χωρίς ζάχαρη & γλουτένη — για να σταματήσεις να ταλαιπωρείσαι σκεφτόμενη τι να μαγειρέψεις.</p>
 <div class="trnk-hero-visual">
-<img src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/trnk-main-gr.png" alt="700+ Αντιφλεγμονώδεις Συνταγές Χωρίς Ζάχαρη & Γλουτένη" style="width:100%;display:block;border-radius:18px;">
+<img src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/trnk-main-gr.png" alt="28 Αντιφλεγμονώδεις Συνταγές Χωρίς Ζάχαρη & Γλουτένη" style="width:100%;display:block;border-radius:18px;">
 </div>
 <div class="trnk-badges">
 <span class="trnk-badge">🌿 ΧΩΡΊΣ ΖΆΧΑΡΗ</span>
@@ -382,7 +382,7 @@ html{scroll-behavior:smooth}
 </div>
 <div class="trnk-price-note">Τιμή λανσαρίσματος για περιορισμένο χρόνο</div>
 <ul class="trnk-quick">
-<li><span>🌿</span> 700+ συνταγές βήμα-βήμα</li>
+<li><span>🌿</span> 28 συνταγές βήμα-βήμα</li>
 <li><span>🌾</span> Χωρίς ζάχαρη & χωρίς γλουτένη</li>
 <li><span>🎁</span> 9 δωρεάν οδηγοί με κάθε αγορά</li>
 <li><span>📅</span> Εβδομαδιαίο πλάνο διατροφής συμπεριλαμβάνεται</li>
@@ -408,7 +408,7 @@ html{scroll-behavior:smooth}
 <div class="trnk-divider" aria-hidden="true"><span>📖</span></div>
 <div class="trnk-wrap-wide">
 <div class="trnk-items-head">
-<span class="trnk-items-badge">📖 700+ Συνταγές · 9 Κατηγορίες</span>
+<span class="trnk-items-badge">📖 28 Συνταγές · 9 Κατηγορίες</span>
 <h2 class="trnk-items-title">Τι θα λάβεις με<br><span class="trnk-hl">Τρώγε &amp; Νιώσε Καλά</span></h2>
 <span class="trnk-underline"></span>
 </div>
@@ -497,7 +497,7 @@ html{scroll-behavior:smooth}
 <h3>Τρώγε &amp; Νιώσε Καλά 🌿 <span class="trnk-hl-y">+ 9 Δωρεάν Οδηγοί</span></h3>
 <div class="trnk-stack-caption">Όλα όσα λαμβάνεις</div>
 <ul class="trnk-stack">
-<li><span>700+ Αντιφλεγμονώδεις Συνταγές (Κύριο Ebook)</span><span class="trnk-inc">ΣΥΜΠΕΡΙΛΑΜΒΑΝΕΤΑΙ</span></li>
+<li><span>28 Αντιφλεγμονώδεις Συνταγές (Κύριο Ebook)</span><span class="trnk-inc">ΣΥΜΠΕΡΙΛΑΜΒΑΝΕΤΑΙ</span></li>
 <li class="is-bonus"><span>🎁 Αντιφλεγμονώδεις Συνταγές</span><span class="trnk-free">ΔΩΡΕΆΝ</span></li>
 <li class="is-bonus"><span>🎁 134 Ροφήματα &amp; Smoothies</span><span class="trnk-free">ΔΩΡΕΆΝ</span></li>
 <li class="is-bonus"><span>🎁 65 Επιδόρπια Χωρίς Ζάχαρη</span><span class="trnk-free">ΔΩΡΕΆΝ</span></li>
@@ -528,7 +528,7 @@ html{scroll-behavior:smooth}
 <div class="trnk-summary-items">
 <p class="trnk-sl-tit">🌿 Τι περιέχει το Τρώγε &amp; Νιώσε Καλά;</p>
 <div class="trnk-sl-grid">
-<div class="trnk-sl-li"><i>✦</i> 700+ αντιφλεγμονώδεις συνταγές</div>
+<div class="trnk-sl-li"><i>✦</i> 28 αντιφλεγμονώδεις συνταγές</div>
 <div class="trnk-sl-li"><i>✦</i> Πρωινά &amp; σνακ ενέργειας</div>
 <div class="trnk-sl-li"><i>✦</i> Επιδόρπια χωρίς ζάχαρη</div>
 <div class="trnk-sl-li"><i>✦</i> Γρήγορα σνακ χωρίς ενοχές</div>
@@ -537,7 +537,7 @@ html{scroll-behavior:smooth}
 </div>
 </div>
 <div class="trnk-summary-box">
-<div class="trnk-summary-row"><span>✅ Κύριο ebook: 700+ συνταγές</span><span>Συμπεριλαμβάνεται</span></div>
+<div class="trnk-summary-row"><span>✅ Κύριο ebook: 28 συνταγές</span><span>Συμπεριλαμβάνεται</span></div>
 <div class="trnk-summary-row"><span>🎁 9 δωρεάν οδηγοί (€63 αξία)</span><span>Δωρεάν</span></div>
 <div class="trnk-summary-row is-total"><span>Τιμή σήμερα</span><span>{{price}}</span></div>
 </div>
@@ -572,7 +572,7 @@ html{scroll-behavior:smooth}
 <div class="trnk-divider" aria-hidden="true"><span>🚀</span></div>
 <div class="trnk-wrap">
 <h2>Ξεκίνα σήμερα να νιώθεις πιο ελαφριά<br>μετά από κάθε γεύμα</h2>
-<p class="trnk-sub" style="margin-top:12px;">700+ συνταγές χωρίς γλουτένη & ζάχαρη για να σταματήσεις τη φλεγμονή και να ξαναπολαύσεις το φαγητό.</p>
+<p class="trnk-sub" style="margin-top:12px;">28 συνταγές χωρίς γλουτένη & ζάχαρη για να σταματήσεις τη φλεγμονή και να ξαναπολαύσεις το φαγητό.</p>
 <a href="#trnk-offer" class="trnk-btn trnk-btn-yellow" style="max-width:480px;margin:0 auto 10px;">Θέλω να Αποφλεγμονωθώ →</a>
 <p class="trnk-btn-note">🔒 Ασφαλής πληρωμή · Άμεση πρόσβαση · Εγγύηση 7 ημερών</p>
 </div>
