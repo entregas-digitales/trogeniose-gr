@@ -1,0 +1,611 @@
+<style>
+html,body{background:#fff;margin:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.trnk{--trnk-navy:#16233B;--trnk-green:#1FA35A;--trnk-green-dark:#178048;--trnk-green-soft:#EAF8EF;--trnk-yellow:#FFC93C;--trnk-yellow-dark:#E6A800;--trnk-red:#E8395B;--trnk-ink:#20242C;--trnk-ink-soft:#6B7280;--trnk-border:#E7E9EE;--trnk-bg-alt:#F6F7F9;--trnk-star:#F5A623;font-family:'Nunito',sans-serif;color:var(--trnk-ink);line-height:1.5;background:#fff}
+.trnk *{box-sizing:border-box}
+.trnk img{max-width:100%;display:block}
+.trnk h1,.trnk h2,.trnk h3,.trnk h4{font-family:'Baloo 2',sans-serif;color:var(--trnk-navy);line-height:1.2;margin:0;font-weight:800}
+.trnk p{margin:0}
+.trnk section{padding:24px 0 30px}
+.trnk .trnk-alt{background:var(--trnk-bg-alt)}
+.trnk .trnk-wrap{max-width:600px;margin:0 auto;padding:0 18px}
+.trnk .trnk-wrap-wide{max-width:1320px;margin:0 auto;padding:0 18px}
+.trnk .trnk-center{text-align:center}
+.trnk .trnk-hl{color:var(--trnk-green-dark);font-weight:800}
+.trnk .trnk-hl-y{color:var(--trnk-yellow)}
+.trnk .trnk-eyebrow{display:inline-flex;align-items:center;gap:6px;background:var(--trnk-green-soft);color:var(--trnk-green-dark);font-weight:800;font-size:12px;letter-spacing:.3px;padding:6px 14px;border-radius:100px;text-transform:uppercase}
+.trnk .trnk-eyebrow-dark{background:rgba(255,255,255,.12);color:#fff}
+.trnk .trnk-underline{display:block;width:70px;height:4px;margin:16px auto 0;border-radius:100px;background:linear-gradient(90deg,var(--trnk-yellow),var(--trnk-green))}
+.trnk .trnk-divider{display:flex;align-items:center;justify-content:center;gap:12px;max-width:600px;margin:0 auto 18px;padding:0 20px}
+.trnk .trnk-divider::before,.trnk .trnk-divider::after{content:"";flex:1;height:2px;border-radius:999px}
+.trnk .trnk-divider::before{background:linear-gradient(90deg,rgba(31,163,90,0),rgba(31,163,90,.38))}
+.trnk .trnk-divider::after{background:linear-gradient(270deg,rgba(31,163,90,0),rgba(31,163,90,.38))}
+.trnk .trnk-divider span{flex:none;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;background:#fff;border:2px solid var(--trnk-green-soft);box-shadow:0 4px 12px rgba(20,30,50,.10)}
+.trnk .trnk-btn{display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Baloo 2',sans-serif;font-weight:700;font-size:17px;padding:16px;border-radius:12px;border:none;cursor:pointer;width:100%;text-decoration:none;text-align:center;transition:transform .12s ease,box-shadow .12s ease,background .15s ease}
+.trnk .trnk-btn-yellow{background:var(--trnk-yellow);color:#000;box-shadow:0 6px 0 var(--trnk-yellow-dark)}
+.trnk .trnk-btn-yellow:active{transform:translateY(3px);box-shadow:0 3px 0 var(--trnk-yellow-dark)}
+.trnk .trnk-btn-green{background:var(--trnk-green);color:#fff;font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;border-radius:10px}
+.trnk .trnk-btn-green:hover{background:var(--trnk-green-dark)}
+.trnk .trnk-btn-note{text-align:center;font-size:12px;color:var(--trnk-ink-soft);margin-top:10px}
+.trnk .trnk-slot{position:relative;display:block;overflow:hidden;background:#eef0f4;border-radius:inherit}
+.trnk .trnk-slot img{width:100%;height:100%;object-fit:cover}
+
+/* HERO */
+.trnk .trnk-hero{padding:30px 0 18px;text-align:center}
+.trnk .trnk-hero h1{font-size:28px;margin:14px 0 12px}
+.trnk .trnk-hero .trnk-sub{font-size:15.5px;color:var(--trnk-ink-soft);max-width:520px;margin:0 auto 22px}
+.trnk .trnk-hero-visual{margin:0 auto 16px;max-width:440px;border-radius:18px;overflow:hidden;box-shadow:0 24px 48px rgba(20,30,50,.20)}
+.trnk .trnk-hero-visual .trnk-slot{aspect-ratio:3/4}
+.trnk .trnk-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 auto 18px;max-width:480px}
+.trnk .trnk-badge{display:inline-flex;align-items:center;gap:5px;background:var(--trnk-green-soft);border:1px solid #BEE9CC;color:var(--trnk-green-dark);font-weight:800;font-size:12px;padding:6px 12px;border-radius:999px}
+
+/* PAIN POINTS */
+.trnk .trnk-pains{padding:22px 18px 28px;max-width:600px;margin:0 auto}
+.trnk .trnk-pains-intro{font-size:15px;color:var(--trnk-ink-soft);margin-bottom:22px}
+.trnk .trnk-pain-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.trnk .trnk-pain-item{display:flex;align-items:flex-start;gap:12px;background:#fff;border:1px solid var(--trnk-border);border-radius:14px;padding:14px 16px;font-size:14.5px;font-weight:700;color:var(--trnk-navy);line-height:1.4;box-shadow:0 4px 12px rgba(20,30,50,.06)}
+.trnk .trnk-pain-item .trnk-pain-ic{font-size:22px;line-height:1;flex:none}
+
+/* CONTRAST */
+.trnk .trnk-contrast-sub{font-size:14px;color:var(--trnk-ink-soft);text-align:center;max-width:480px;margin:0 auto 20px}
+.trnk .trnk-contrast-cols{display:flex;gap:12px;align-items:stretch;flex-direction:column}
+.trnk .trnk-contrast-col{flex:1;border-radius:14px;padding:16px}
+.trnk .trnk-contrast-col.is-bad{background:#FEF2F2;border:1px solid #FECACA}
+.trnk .trnk-contrast-col.is-good{background:var(--trnk-green-soft);border:1px solid #BEE9CC}
+.trnk .trnk-contrast-col h4{font-size:14px;margin-bottom:10px}
+.trnk .trnk-contrast-col.is-bad h4{color:var(--trnk-red)}
+.trnk .trnk-contrast-col.is-good h4{color:var(--trnk-green-dark)}
+.trnk .trnk-contrast-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.trnk .trnk-contrast-list li{font-size:13px;line-height:1.45;display:flex;gap:7px;align-items:flex-start}
+.trnk .trnk-contrast-list li b{flex:none}
+
+/* FEATURES GRID */
+.trnk .trnk-features-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.trnk .trnk-feature{border:1px solid #BEE9CC;border-radius:14px;padding:18px 12px;text-align:center;background:var(--trnk-green-soft);box-shadow:0 6px 16px rgba(23,128,72,.10)}
+.trnk .trnk-feature .trnk-ic{font-size:26px;margin-bottom:8px}
+.trnk .trnk-feature h4{font-size:14px;margin-bottom:4px;font-weight:700;color:var(--trnk-green-dark)}
+.trnk .trnk-feature p{font-size:12.5px;color:#4B7A5C}
+
+/* INFO */
+.trnk .trnk-info{padding-top:0}
+.trnk .trnk-info .trnk-title{font-size:24px;margin:0 0 8px}
+.trnk .trnk-rating{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--trnk-ink-soft);font-weight:700;margin-bottom:14px}
+.trnk .trnk-stars{color:var(--trnk-star);letter-spacing:1px}
+.trnk .trnk-price-line{display:flex;align-items:baseline;gap:10px;margin-bottom:2px;flex-wrap:wrap}
+.trnk .trnk-price-now{font-family:'Baloo 2',sans-serif;font-size:30px;font-weight:800;color:var(--trnk-ink)}
+.trnk .trnk-price-old{font-size:16px;color:#B5B9C2;text-decoration:line-through}
+.trnk .trnk-save-pill{background:var(--trnk-red);color:#fff;font-weight:800;font-size:12px;padding:2px 9px;border-radius:6px}
+.trnk .trnk-price-note{font-size:12.5px;color:var(--trnk-ink-soft);margin-bottom:18px}
+.trnk .trnk-quick{list-style:none;margin:0 0 20px;padding:0}
+.trnk .trnk-quick li{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;color:var(--trnk-navy);padding:7px 0}
+.trnk .trnk-quick li span{flex:0 0 auto;font-size:18px;line-height:1}
+.trnk .trnk-diff{border:2px solid var(--trnk-navy);border-radius:12px;padding:16px;margin-bottom:16px}
+.trnk .trnk-diff-title{text-align:center;font-family:'Baloo 2',sans-serif;font-weight:700;font-size:13px;color:var(--trnk-navy);margin-bottom:12px;letter-spacing:.3px}
+.trnk .trnk-diff-cols{display:flex;gap:10px;align-items:center}
+.trnk .trnk-diff-col{flex:1;border-radius:10px;padding:14px;text-align:center}
+.trnk .trnk-diff-col.is-normal{background:var(--trnk-bg-alt)}
+.trnk .trnk-diff-col.is-offer{background:var(--trnk-green-soft);border:1px solid #BEE9CC}
+.trnk .trnk-diff-col .trnk-lbl{font-size:11.5px;color:var(--trnk-ink-soft);font-weight:700;margin-bottom:4px}
+.trnk .trnk-diff-col .trnk-amt{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:16px}
+.trnk .trnk-diff-col.is-normal .trnk-amt{color:#B5B9C2;text-decoration:line-through}
+.trnk .trnk-diff-col.is-offer .trnk-amt{color:var(--trnk-green-dark)}
+.trnk .trnk-diff-x{font-family:'Baloo 2',sans-serif;font-weight:800;color:var(--trnk-red);background:#FCEAEE;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex:none}
+.trnk .trnk-diff-foot{background:var(--trnk-bg-alt);border-radius:8px;padding:9px;text-align:center;font-size:12.5px;font-weight:700;margin-top:10px}
+.trnk .trnk-diff-foot b{color:var(--trnk-green-dark)}
+
+/* ITEMS */
+.trnk .trnk-items-head{text-align:center;margin:0 auto 22px}
+.trnk .trnk-items-badge{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--trnk-green),var(--trnk-green-dark));color:#fff;font-weight:800;font-size:12px;letter-spacing:.6px;text-transform:uppercase;padding:7px 16px;border-radius:100px;box-shadow:0 8px 16px rgba(31,163,90,.28);margin-bottom:16px}
+.trnk .trnk-items-title{font-size:27px}
+.trnk .trnk-items-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}
+.trnk .trnk-item{display:flex;flex-direction:column;padding:14px 12px 18px;border:1px solid var(--trnk-border);border-radius:18px;background:#fff;box-shadow:0 10px 26px rgba(20,30,50,.09)}
+.trnk .trnk-item .trnk-slot{aspect-ratio:1/1;margin:0 auto 14px;width:100%;border-radius:12px;box-shadow:0 14px 28px rgba(20,30,50,.20)}
+.trnk .trnk-item h3{font-weight:700;font-size:15px;line-height:1.28;text-align:center;margin:0 0 8px}
+.trnk .trnk-item p{font-size:12.5px;line-height:1.5;color:#444;text-align:center;margin:0}
+
+/* BONUS GRID */
+.trnk .trnk-bonus-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px;align-items:start}
+.trnk .trnk-bonus{border:1px solid var(--trnk-border);border-radius:14px;padding:14px;text-align:center;background:#fff;box-shadow:0 8px 20px rgba(20,30,50,.07)}
+.trnk .trnk-bonus .trnk-thumb{margin-bottom:10px;border-radius:10px;overflow:hidden;box-shadow:0 8px 16px rgba(20,30,50,.14)}
+.trnk .trnk-bonus .trnk-thumb .trnk-slot{aspect-ratio:3/4;background:#f3efe6}
+.trnk .trnk-bonus .trnk-bname{font-size:12.5px;font-weight:700;color:var(--trnk-navy);line-height:1.3}
+.trnk .trnk-bonus .trnk-bval{font-size:11.5px;color:#9aa1ad;text-decoration:line-through;margin-top:4px}
+.trnk .trnk-bonus .trnk-bfree{font-size:10.5px;color:var(--trnk-green-dark);font-weight:800;text-transform:uppercase;margin-top:2px}
+.trnk .trnk-bonus.is-wide{grid-column:1/-1;padding:16px}
+.trnk .trnk-bonus.is-wide .trnk-thumb{max-width:220px;margin:0 auto 12px}
+.trnk .trnk-bonus.is-wide .trnk-bname{font-size:15px}
+.trnk .trnk-bonus-total{display:flex;justify-content:center;margin-top:18px}
+.trnk .trnk-bonus-total span{background:#FFF4D6;border:1px solid #FFE3A0;color:#7a5600;font-weight:800;font-size:14px;padding:10px 18px;border-radius:999px}
+
+/* GALLERY */
+.trnk .trnk-gal-head{max-width:760px;margin:0 auto 20px;padding:0 20px;text-align:center}
+.trnk .trnk-gal-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 18px 20px;scrollbar-width:none}
+.trnk .trnk-gal-track::-webkit-scrollbar{display:none}
+.trnk .trnk-gal-card{flex:0 0 auto;width:230px;scroll-snap-align:center;border-radius:18px;overflow:hidden;position:relative;box-shadow:0 10px 26px rgba(22,35,59,.12)}
+.trnk .trnk-gal-card .trnk-slot{aspect-ratio:3/4}
+.trnk .trnk-gal-label{position:absolute;left:12px;bottom:12px;z-index:3;background:rgba(255,255,255,.94);color:var(--trnk-navy);font-size:12px;font-weight:800;padding:6px 12px;border-radius:999px;box-shadow:0 2px 10px rgba(0,0,0,.18)}
+.trnk .trnk-gal-hint{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:6px;color:var(--trnk-ink-soft);font-size:13px;font-weight:700}
+.trnk .trnk-arrow-anim{display:inline-block;color:var(--trnk-green);font-size:16px;animation:trnk-nudge 1.4s ease-in-out infinite}
+@keyframes trnk-nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+@media (prefers-reduced-motion:reduce){.trnk .trnk-arrow-anim{animation:none}}
+
+/* RESULTS */
+.trnk .trnk-results-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.trnk .trnk-result{background:#fff;border:1px solid var(--trnk-border);border-radius:14px;padding:14px;box-shadow:0 6px 16px rgba(20,30,50,.07)}
+.trnk .trnk-result-ic{font-size:22px;margin-bottom:8px}
+.trnk .trnk-result p{font-size:13px;color:var(--trnk-ink-soft);line-height:1.45}
+.trnk .trnk-result strong{color:var(--trnk-navy);display:block;font-size:14px;margin-bottom:4px}
+
+/* OFFER BOX */
+.trnk .trnk-offer-box{background:var(--trnk-navy);border-radius:20px;padding:28px 22px;color:#fff}
+.trnk .trnk-offer-box h3{font-size:20px;margin:14px 0 16px;text-align:center;color:#fff}
+.trnk .trnk-offer-visual{margin:0 auto 22px;max-width:360px;border-radius:16px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,.40)}
+.trnk .trnk-offer-visual .trnk-slot{aspect-ratio:3/2}
+.trnk .trnk-stack-caption{font-family:'Baloo 2',sans-serif;font-weight:700;font-size:13px;color:#fff;text-align:center;letter-spacing:.4px;text-transform:uppercase;margin:0 0 10px}
+.trnk .trnk-stack{list-style:none;margin:0 0 16px;padding:0}
+.trnk .trnk-stack li{display:flex;justify-content:space-between;align-items:center;font-size:13.5px;padding:7px 0;border-bottom:1px dashed rgba(255,255,255,.15);color:#D7DEEA}
+.trnk .trnk-stack li span:last-child{white-space:nowrap;margin-left:10px}
+.trnk .trnk-stack li.is-bonus{color:#FFE9AE}
+.trnk .trnk-stack .trnk-inc{font-size:11px;font-weight:700;color:#9FB3CC}
+.trnk .trnk-stack .trnk-free{background:#1F8A4C;color:#fff;font-weight:700;font-size:11px;letter-spacing:.5px;padding:4px 10px;border-radius:999px;display:inline-block;line-height:1.4}
+.trnk .trnk-stack-total{border-top:2px solid rgba(255,255,255,.2);margin-top:6px;padding-top:14px}
+.trnk .trnk-stack-total .trnk-row{display:flex;justify-content:space-between;font-size:14px;color:#B5BFCF}
+.trnk .trnk-stack-total .trnk-row.is-final{font-family:'Baloo 2',sans-serif;font-size:24px;font-weight:800;color:var(--trnk-yellow);margin-top:4px}
+.trnk .trnk-stack-total .trnk-old{text-decoration:line-through;color:#8894A8}
+.trnk .trnk-offer-box .trnk-btn-yellow{margin-top:18px}
+.trnk .trnk-offer-trust{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:14px;font-size:12px;font-weight:700;color:#B5BFCF}
+#trnk-offer{scroll-margin-top:24px}
+
+/* SUMMARY */
+.trnk .trnk-summary-items{margin:22px 0 0;padding:22px 20px;background:#F4FAF6;border:1px solid #D5E8DC;border-radius:16px}
+.trnk .trnk-sl-tit{font-size:13px;letter-spacing:1.2px;text-transform:uppercase;color:#4E9E62;font-weight:700;margin:0 0 16px;line-height:1.4}
+.trnk .trnk-sl-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
+.trnk .trnk-sl-li{display:flex;align-items:center;gap:9px;font-size:14px;line-height:1.45;color:#1B2A4A;font-weight:700;padding:5px 0}
+.trnk .trnk-sl-li i{flex:0 0 auto;font-style:normal;color:#4E9E62;font-size:12px}
+.trnk .trnk-summary-box{border:1px solid var(--trnk-border);border-radius:16px;padding:22px;margin-top:22px;background:#fff}
+.trnk .trnk-summary-row{display:flex;justify-content:space-between;gap:12px;font-size:14px;padding:9px 0;border-bottom:1px dashed var(--trnk-border)}
+.trnk .trnk-summary-row:last-of-type{border-bottom:none}
+.trnk .trnk-summary-row span:last-child{white-space:nowrap}
+.trnk .trnk-summary-row.is-total{background:var(--trnk-navy);color:#fff;margin:12px -22px -22px;padding:16px 22px;border-radius:0 0 16px 16px;font-family:'Baloo 2',sans-serif;font-weight:700;font-size:17px}
+.trnk .trnk-summary-row.is-total span:last-child{color:var(--trnk-yellow)}
+.trnk .trnk-guarantee{background:var(--trnk-green-soft);border-radius:16px;padding:26px 22px;text-align:center;margin-top:22px}
+.trnk .trnk-guarantee .trnk-ic{font-size:28px;margin-bottom:6px}
+.trnk .trnk-guarantee h4{color:var(--trnk-green-dark);font-size:16px;margin-bottom:6px}
+.trnk .trnk-guarantee p{font-size:13.5px;color:#4B7A5C}
+
+/* FAQ */
+.trnk .trnk-faq-item{border:1px solid var(--trnk-border);border-radius:12px;margin-bottom:9px;overflow:hidden;background:#fff}
+.trnk .trnk-faq-q{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;font-weight:700;font-size:15px;color:var(--trnk-navy)}
+.trnk .trnk-faq-q .trnk-plus{color:var(--trnk-green-dark);font-size:19px;transition:transform .2s ease;flex:none}
+.trnk .trnk-faq-item.is-open .trnk-plus{transform:rotate(45deg)}
+.trnk .trnk-faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;font-size:14px;color:var(--trnk-ink-soft);padding:0 18px}
+.trnk .trnk-faq-item.is-open .trnk-faq-a{max-height:400px;padding-bottom:16px}
+
+/* FINAL */
+.trnk .trnk-final{text-align:center;background:#fff;padding:24px 0 46px}
+.trnk .trnk-final h2{font-size:27px;margin:14px 0 12px}
+.trnk .trnk-final .trnk-sub{font-size:15.5px;color:var(--trnk-ink-soft);max-width:520px;margin:0 auto 22px}
+
+/* RESPONSIVE */
+@media (max-width:520px){
+.trnk .trnk-contrast-cols{flex-direction:column}
+.trnk .trnk-results-grid{grid-template-columns:1fr}
+}
+@media (max-width:380px){
+.trnk .trnk-hero h1{font-size:25px}
+.trnk .trnk-items-title{font-size:24px}
+.trnk .trnk-sl-grid{grid-template-columns:1fr}
+.trnk .trnk-diff-col{padding:10px 6px}
+}
+@media (min-width:760px){
+.trnk section{padding:34px 0 42px}
+.trnk .trnk-wrap,.trnk .trnk-divider{max-width:820px}
+.trnk .trnk-hero{padding:44px 0 24px}
+.trnk .trnk-hero h1{font-size:40px}
+.trnk .trnk-hero .trnk-sub{font-size:17.5px;max-width:620px}
+.trnk .trnk-info .trnk-title{font-size:28px}
+.trnk .trnk-price-now{font-size:36px}
+.trnk .trnk-items-title{font-size:34px}
+.trnk .trnk-final h2{font-size:34px}
+.trnk .trnk-items-grid{grid-template-columns:repeat(3,1fr);gap:22px}
+.trnk .trnk-item h3{font-size:17.5px}
+.trnk .trnk-item p{font-size:14px}
+.trnk .trnk-features-grid{grid-template-columns:repeat(3,1fr);gap:18px}
+.trnk .trnk-bonus-grid{grid-template-columns:repeat(3,1fr);gap:18px}
+.trnk .trnk-results-grid{grid-template-columns:repeat(3,1fr)}
+.trnk .trnk-offer-box{padding:38px 34px}
+.trnk .trnk-offer-box h3{font-size:25px}
+.trnk .trnk-stack li{font-size:15px}
+.trnk .trnk-stack-total .trnk-row.is-final{font-size:30px}
+.trnk .trnk-btn{font-size:19px;padding:19px}
+.trnk .trnk-gal-card{width:270px}
+.trnk .trnk-contrast-cols{flex-direction:row}
+}
+@media (min-width:1100px){
+.trnk .trnk-wrap,.trnk .trnk-divider{max-width:920px}
+.trnk .trnk-hero h1{font-size:48px}
+.trnk .trnk-items-grid{grid-template-columns:repeat(4,1fr);gap:26px}
+.trnk .trnk-bonus-grid{grid-template-columns:repeat(4,1fr)}
+}
+
+/* TICKER */
+.trnk-tick{background:#000;overflow:hidden;position:relative;width:100%;padding:8px 0}
+.trnk-tick-track{display:flex;width:max-content;column-gap:60px;animation:trnk-tick-run 160s linear infinite}
+.trnk-tick-item{color:#fff;font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;letter-spacing:.3px;text-transform:uppercase;white-space:nowrap;margin:0}
+@keyframes trnk-tick-run{to{transform:translateX(calc(-50% - 30px))}}
+@media (prefers-reduced-motion:reduce){.trnk-tick-track{animation:none}}
+@media (min-width:750px){.trnk-tick{padding:11px 0}.trnk-tick-track{column-gap:100px}.trnk-tick-item{font-size:13px}}
+</style>
+
+<!-- URGENCY TOPBAR -->
+<div id="trnk-topbar" style="background:#16233B;color:#fff;text-align:center;padding:10px 16px;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;letter-spacing:.2px">
+  <span>⚡ Προσφορά Λανσαρίσματος — Σήμερα Μόνο</span>
+  &nbsp;|&nbsp;
+  <span id="trnk-timer" style="color:#FFC93C">⏱ <span id="trnk-mm">14</span>:<span id="trnk-ss">59</span></span>
+  &nbsp;|&nbsp;
+  <span>🛡️ 7 Ημέρες Εγγύηση</span>
+</div>
+<script>
+(function(){
+  var m=14,s=59;
+  var el=document.getElementById('trnk-timer');
+  if(!el)return;
+  var iv=setInterval(function(){
+    s--;if(s<0){s=59;m--;if(m<0){clearInterval(iv);return;}}
+    var mm=document.getElementById('trnk-mm'),ss=document.getElementById('trnk-ss');
+    if(mm)mm.textContent=m<10?'0'+m:m;
+    if(ss)ss.textContent=s<10?'0'+s:s;
+  },1000);
+})();
+</script>
+
+<!-- TICKER -->
+<div class="trnk-tick" aria-label="Πλεονεκτήματα">
+<div class="trnk-tick-track" id="trnkTickTrack">
+<p class="trnk-tick-item">🌿 700+ Αντιφλεγμονώδεις Συνταγές</p>
+<p class="trnk-tick-item">🌾 Χωρίς Ζάχαρη &amp; Χωρίς Γλουτένη</p>
+<p class="trnk-tick-item">🎁 9 Δωρεάν Οδηγοί Με Κάθε Αγορά</p>
+<p class="trnk-tick-item">📩 Άμεση Πρόσβαση Μέσω Email</p>
+<p class="trnk-tick-item">🛡️ 7 Ημέρες Εγγύηση</p>
+</div>
+</div>
+<script>
+(function(){var t=document.getElementById('trnkTickTrack');if(!t)return;var b=t.innerHTML;for(var i=0;i<9;i++){t.innerHTML+=b;}})();
+</script>
+
+<div class="trnk">
+
+<!-- 1. HERO -->
+<section class="trnk-hero">
+<div class="trnk-wrap">
+<span class="trnk-eyebrow">🌿 700+ Συνταγές · 9 Δωρεάν Οδηγοί σε 1 Αγορά</span>
+<div style="margin:10px auto 0;display:inline-flex;align-items:center;gap:8px;background:#FFF4D6;border:1px solid #FFE3A0;color:#7a5600;font-size:12px;font-weight:800;padding:6px 14px;border-radius:999px;">⭐ +3.500 λήψεις · 4,9/5</div>
+<h1>Πες αντίο στη φλεγμονή με <span class="trnk-hl">εύκολες & νόστιμες συνταγές</span> που σε βοηθούν να νιώθεις <span class="trnk-hl">πιο ελαφριά</span> από τις πρώτες μέρες</h1>
+<p class="trnk-sub">700+ γρήγορες αντιφλεγμονώδεις συνταγές χωρίς ζάχαρη & γλουτένη — για να σταματήσεις να ταλαιπωρείσαι σκεφτόμενη τι να μαγειρέψεις.</p>
+<div class="trnk-hero-visual">
+<img src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/trnk-main-gr.png" alt="700+ Αντιφλεγμονώδεις Συνταγές Χωρίς Ζάχαρη & Γλουτένη" style="width:100%;display:block;border-radius:18px;">
+</div>
+<div class="trnk-badges">
+<span class="trnk-badge">🌿 ΧΩΡΊΣ ΖΆΧΑΡΗ</span>
+<span class="trnk-badge">🌾 ΧΩΡΊΣ ΓΛΟΥΤΈΝΗ</span>
+<span class="trnk-badge">⏱️ ΕΎΚΟΛΕΣ &amp; ΓΡΉΓΟΡΕΣ</span>
+<span class="trnk-badge">⚡ ΠΕΡΙΣΣΌΤΕΡΗ ΕΝΈΡΓΕΙΑ</span>
+</div>
+<p style="font-size:13px;color:var(--trnk-ink-soft);font-weight:700;">ΤΡΩΣ ΚΑΛΑ · ΝΙΩΘΕΙΣ ΚΑΛΥΤΕΡΑ · ΖΕΙΣ ΜΕ ΠΕΡΙΣΣΟΤΕΡΗ ΕΝΕΡΓΕΙΑ.</p>
+</div>
+</section>
+
+<!-- 2. ΣΕΑΦΟΡΑ; (Σε αφορά;) -->
+<section class="trnk-alt">
+<div class="trnk-divider" aria-hidden="true"><span>💭</span></div>
+<div class="trnk-wrap">
+<div class="trnk-center">
+<span class="trnk-eyebrow">Σε αφορά;</span>
+<h2 style="font-size:22px;margin-top:12px;">Το πρόβλημα δεν είναι η <span class="trnk-hl">έλλειψη θέλησης</span></h2>
+<span class="trnk-underline"></span>
+</div>
+<p class="trnk-pains-intro" style="margin-top:16px;">Είναι το να νιώθεις φουσκωμένη μετά το φαγητό, το να μη ξέρεις τι να μαγειρέψεις και να καταλήγεις κουρασμένη από το να προσπαθείς να φροντίσεις τον εαυτό σου χωρίς να βλέπεις πραγματικά αποτελέσματα.</p>
+<ul class="trnk-pain-list">
+<li class="trnk-pain-item"><span class="trnk-pain-ic">🤰</span><span>Τελειώνεις να φας και νιώθεις το στομάχι βαρύ ή φουσκωμένο, ακόμα και όταν προσπαθείς να προσέχεις;</span></li>
+<li class="trnk-pain-item"><span class="trnk-pain-ic">😣</span><span>Θέλεις να τρως καλύτερα αλλά δεν ξέρεις πια τι να μαγειρέψεις για να νιώθεις καλά;</span></li>
+<li class="trnk-pain-item"><span class="trnk-pain-ic">😤</span><span>Νιώθεις ότι κάνεις τον κόπο να προσέχεις αλλά εξακολουθείς να έχεις έλλειψη ενέργειας και βαρύτητα;</span></li>
+<li class="trnk-pain-item"><span class="trnk-pain-ic">😰</span><span>Σου συμβαίνει να αρχίζεις υγιεινή διατροφή… αλλά τελικά το εγκαταλείπεις γιατί δεν είναι πρακτικό ούτε βιώσιμο;</span></li>
+<li class="trnk-pain-item"><span class="trnk-pain-ic">🍬</span><span>Καταλήγεις να τρως ό,τι βρεις από άγχος, κούραση ή έλλειψη ιδεών;</span></li>
+</ul>
+</div>
+</section>
+
+<!-- 3. Η ΔΙΑΦΟΡΑ -->
+<section>
+<div class="trnk-divider" aria-hidden="true"><span>✨</span></div>
+<div class="trnk-wrap">
+<div class="trnk-center">
+<span class="trnk-eyebrow">Η διαφορά είναι εδώ</span>
+<h2 style="font-size:22px;margin-top:12px;">Η διαφορά δεν είναι στη <span class="trnk-hl">δίαιτα</span></h2>
+<span class="trnk-underline"></span>
+</div>
+<p class="trnk-contrast-sub" style="margin-top:14px;">Είναι στο να έχεις απλές, οργανωμένες και νόστιμες συνταγές που μπορείς να διατηρήσεις ακόμα και σε χαοτικές εβδομάδες, χωρίς να πεινάς ούτε να αισθάνεσαι ότι θυσιάζεσαι.</p>
+<div class="trnk-contrast-cols">
+<div class="trnk-contrast-col is-bad">
+<h4>❌ Ακραίες δίαιτες</h4>
+<ul class="trnk-contrast-list">
+<li><b>✕</b> Δύσκολο να διατηρηθούν — τελικά τα παρατάς.</li>
+<li><b>✕</b> Σε αφήνουν χωρίς ιδέες, σκεφτόμενη συνεχώς φαγητό.</li>
+<li><b>✕</b> Δημιουργούν άγχος και αίσθηση συνεχούς στέρησης.</li>
+<li><b>✕</b> Επιστρέφεις στις ίδιες συνήθειες.</li>
+</ul>
+</div>
+<div class="trnk-contrast-col is-good">
+<h4>✅ Πρακτική αντιφλεγμονώδης διατροφή</h4>
+<ul class="trnk-contrast-list">
+<li><b>✓</b> Εύκολες, γρήγορες και νόστιμες συνταγές για κάθε μέρα.</li>
+<li><b>✓</b> Απλά υλικά και γεύματα που θα απολαύσεις.</li>
+<li><b>✓</b> Λιγότερο φούσκωμα, περισσότερη ελαφρότητα και ενέργεια.</li>
+<li><b>✓</b> Ένας πρακτικός και βιώσιμος τρόπος να νιώθεις καλύτερα.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 4. ΤΙ ΠΕΡΙΛΑΜΒΑΝΕΙ -->
+<section class="trnk-alt">
+<div class="trnk-divider" aria-hidden="true"><span>🥗</span></div>
+<div class="trnk-wrap">
+<div class="trnk-center">
+<span class="trnk-eyebrow">Όλα σε ένα μέρος</span>
+<h2 style="font-size:22px;margin-top:12px;">Όλα όσα χρειάζεσαι για να νιώθεις <span class="trnk-hl">πιο ελαφριά</span></h2>
+<span class="trnk-underline"></span>
+<p style="font-size:14px;color:var(--trnk-ink-soft);margin-top:12px;max-width:480px;margin-left:auto;margin-right:auto;">Συνταγές, οργάνωση και πρακτικές ιδέες για να κάνεις την υγιεινή διατροφή απλή — ακόμα και τις πιο πολυάσχολες εβδομάδες.</p>
+</div>
+<div class="trnk-features-grid">
+<div class="trnk-feature"><div class="trnk-ic">🥗</div><h4>Αντιφλεγμονώδη γεύματα</h4><p>Πλήρη, νόστιμα και χωρίς ζάχαρη ή γλουτένη για να απολαμβάνεις το φαγητό χωρίς να νιώθεις βαριά.</p></div>
+<div class="trnk-feature"><div class="trnk-ic">☀️</div><h4>Πρωινά & σνακ ενέργειας</h4><p>Γρήγορες επιλογές για να νιώθεις καλά από το πρώτο γεύμα της ημέρας.</p></div>
+<div class="trnk-feature"><div class="trnk-ic">⚡</div><h4>Γρήγορα σνακ χωρίς ενοχές</h4><p>Απλά και χορταστικά για τις στιγμές που εμφανίζεται η λιγούρα.</p></div>
+<div class="trnk-feature"><div class="trnk-ic">🍫</div><h4>Γλυκά χωρίς ζάχαρη</h4><p>Νόστιμες παρασκευές για απόλαυση χωρίς ενοχές.</p></div>
+<div class="trnk-feature"><div class="trnk-ic">🌾</div><h4>Εναλλακτικές για αλεύρι & ζάχαρη</h4><p>Πρακτικές ιδέες για να μετατρέψεις τα αγαπημένα σου χωρίς να νιώθεις ότι κάνεις δίαιτα.</p></div>
+</div>
+</div>
+</section>
+
+<!-- 5. ΤΙΜΗ (πρώτο κουμπί → scroll στην προσφορά) -->
+<section class="trnk-info">
+<div class="trnk-divider" aria-hidden="true"><span>🛒</span></div>
+<div class="trnk-wrap">
+<h2 class="trnk-title">Τρώγε &amp; Νιώσε Καλά 🌿 + 9 ΔΩΡΕΆΝ ΟΔΗΓΟΊ</h2>
+<div class="trnk-rating"><span class="trnk-stars">★★★★★</span> 4,9/5</div>
+<div class="trnk-price-line">
+<span class="trnk-price-now">{{price}}</span>
+<span class="trnk-price-old">{{original_price}}</span>
+<span class="trnk-save-pill">-67%</span>
+</div>
+<div class="trnk-price-note">Τιμή λανσαρίσματος για περιορισμένο χρόνο</div>
+<ul class="trnk-quick">
+<li><span>🌿</span> 700+ συνταγές βήμα-βήμα</li>
+<li><span>🌾</span> Χωρίς ζάχαρη & χωρίς γλουτένη</li>
+<li><span>🎁</span> 9 δωρεάν οδηγοί με κάθε αγορά</li>
+<li><span>📅</span> Εβδομαδιαίο πλάνο διατροφής συμπεριλαμβάνεται</li>
+<li><span>📩</span> Άμεση πρόσβαση μέσω email</li>
+<li><span>🛡️</span> 7 ημέρες εγγύηση</li>
+</ul>
+<div class="trnk-diff">
+<div class="trnk-diff-title">ΔΕΙΤΕ ΤΗ ΔΙΑΦΟΡΑ</div>
+<div class="trnk-diff-cols">
+<div class="trnk-diff-col is-normal"><div class="trnk-lbl">ΚΑΝΟΝΙΚΉ ΤΙΜΉ</div><div class="trnk-amt">{{original_price}}</div></div>
+<div class="trnk-diff-x">→</div>
+<div class="trnk-diff-col is-offer"><div class="trnk-lbl">ΣΉΜΕΡΑ ΠΛΗΡΏΝΕΙΣ</div><div class="trnk-amt">{{price}}</div></div>
+</div>
+<div class="trnk-diff-foot">Παίρνεις <b>10 ebooks</b> στην τιμή <b>μιας αγοράς</b> 🔥</div>
+</div>
+<a href="#trnk-offer" class="trnk-btn trnk-btn-green">Θέλω όλα σε αυτή την τιμή ↓</a>
+<div class="trnk-btn-note">📩 Άμεση πρόσβαση · Εφάπαξ πληρωμή</div>
+</div>
+</section>
+
+<!-- 6. ΤΙ ΘΑ ΛΑΒΕΙΣ -->
+<section>
+<div class="trnk-divider" aria-hidden="true"><span>📖</span></div>
+<div class="trnk-wrap-wide">
+<div class="trnk-items-head">
+<span class="trnk-items-badge">📖 700+ Συνταγές · 9 Κατηγορίες</span>
+<h2 class="trnk-items-title">Τι θα λάβεις με<br><span class="trnk-hl">Τρώγε &amp; Νιώσε Καλά</span></h2>
+<span class="trnk-underline"></span>
+</div>
+<div class="trnk-items-grid">
+<div class="trnk-item"><img src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/cat-1-geumata.jpg" alt="Πλήρη αντιφλεγμονώδη γεύματα" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border-radius:12px 12px 0 0"><h3>Πλήρη αντιφλεγμονώδη γεύματα</h3><p>Πιάτα χωρίς ζάχαρη & γλουτένη για να τρως χορτάτη και ελαφριά.</p></div>
+<div class="trnk-item"><img src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/cat-2-proina.jpg" alt="Πρωινά και μεσημεριανά ενέργειας" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border-radius:12px 12px 0 0"><h3>Πρωινά και μεσημεριανά ενέργειας</h3><p>Εύκολες επιλογές για να ξεκινάς τη μέρα με πραγματική ενέργεια.</p></div>
+<div class="trnk-item"><img src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/cat-3-snak.jpg" alt="Γρήγορα σνακ για να αποφύγεις τη λιγούρα" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border-radius:12px 12px 0 0"><h3>Γρήγορα σνακ για να αποφύγεις τη λιγούρα</h3><p>Απλά και χορταστικά σνακ για τις στιγμές της λιγούρας ή του άγχους.</p></div>
+<div class="trnk-item"><img src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/cat-4-epidorpia.jpg" alt="Επιδόρπια χωρίς ζάχαρη" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border-radius:12px 12px 0 0"><h3>Επιδόρπια χωρίς ζάχαρη</h3><p>Παρασκευές για να απολαύσεις κάτι γλυκό χωρίς ενοχές.</p></div>
+<div class="trnk-item"><img src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/cat-5-sustituciones.jpg" alt="Πώς να αντικαταστήσεις αλεύρια & ζάχαρη" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border-radius:12px 12px 0 0"><h3>Πώς να αντικαταστήσεις αλεύρια & ζάχαρη</h3><p>Πρακτικές ιδέες χωρίς να νιώθεις ότι κάνεις δίαιτα.</p></div>
+</div>
+</div>
+</section>
+
+<!-- 7. ΔΩΡΕΑΝ ΟΔΗΓΟΙ (Bonuses) -->
+<section class="trnk-alt">
+<div class="trnk-divider" aria-hidden="true"><span>🎁</span></div>
+<div class="trnk-wrap">
+<div class="trnk-center">
+<span class="trnk-eyebrow">9 δωρεάν οδηγοί</span>
+<h2 style="font-size:22px;margin-top:12px;">Επίσης, λαμβάνεις <span class="trnk-hl">ΟΛΑ αυτά δωρεάν</span></h2>
+<span class="trnk-underline"></span>
+<p style="font-size:14px;color:var(--trnk-ink-soft);margin-top:12px;">Με την αγορά σου, λαμβάνεις αυτούς τους οδηγούς χωρίς επιπλέον κόστος.</p>
+</div>
+<div class="trnk-bonus-grid">
+<div class="trnk-bonus"><div class="trnk-thumb" style="border-radius:10px;overflow:hidden;box-shadow:0 8px 16px rgba(20,30,50,.14)"><img src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/trnk-b1-gr.png" alt="Αντιφλεγμονώδεις & Νόστιμες Συνταγές" style="width:100%;display:block;aspect-ratio:9/16;object-fit:cover"></div><div class="trnk-bname">🥗 Αντιφλεγμονώδεις Συνταγές</div><div class="trnk-bval">€7</div><div class="trnk-bfree">Σήμερα Δωρεάν</div></div>
+<div class="trnk-bonus"><div class="trnk-thumb" style="border-radius:10px;overflow:hidden;box-shadow:0 8px 16px rgba(20,30,50,.14)"><img src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/trnk-b2-gr.png" alt="134 Ροφήματα & Smoothies" style="width:100%;display:block;aspect-ratio:9/16;object-fit:cover"></div><div class="trnk-bname">🥤 134 Ροφήματα &amp; Smoothies</div><div class="trnk-bval">€7</div><div class="trnk-bfree">Σήμερα Δωρεάν</div></div>
+<div class="trnk-bonus"><div class="trnk-thumb" style="border-radius:10px;overflow:hidden;box-shadow:0 8px 16px rgba(20,30,50,.14)"><img src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/trnk-b3-gr.png" alt="65 Επιδόρπια Χωρίς Ζάχαρη" style="width:100%;display:block;aspect-ratio:9/16;object-fit:cover"></div><div class="trnk-bname">🍦 65 Επιδόρπια Χωρίς Ζάχαρη</div><div class="trnk-bval">€8</div><div class="trnk-bfree">Σήμερα Δωρεάν</div></div>
+<div class="trnk-bonus"><div class="trnk-thumb" style="border-radius:10px;overflow:hidden;box-shadow:0 8px 16px rgba(20,30,50,.14)"><img src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/trnk-b4-gr.png" alt="25 Ιδέες για Υγιεινό Brunch" style="width:100%;display:block;aspect-ratio:9/16;object-fit:cover"></div><div class="trnk-bname">🌅 25 Ιδέες για Υγιεινό Brunch</div><div class="trnk-bval">€8</div><div class="trnk-bfree">Σήμερα Δωρεάν</div></div>
+<div class="trnk-bonus"><div class="trnk-thumb" style="border-radius:10px;overflow:hidden;box-shadow:0 8px 16px rgba(20,30,50,.14)"><img src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/trnk-b5-gr.png" alt="50 Υγιεινές Συνταγές Σχάρας" style="width:100%;display:block;aspect-ratio:9/16;object-fit:cover"></div><div class="trnk-bname">🔥 50 Υγιεινές Συνταγές Σχάρας</div><div class="trnk-bval">€7</div><div class="trnk-bfree">Σήμερα Δωρεάν</div></div>
+<div class="trnk-bonus"><div class="trnk-thumb" style="border-radius:10px;overflow:hidden;box-shadow:0 8px 16px rgba(20,30,50,.14)"><img src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/trnk-b6-gr.png" alt="70 Συνταγές Για Κατάψυξη" style="width:100%;display:block;aspect-ratio:9/16;object-fit:cover"></div><div class="trnk-bname">🧊 70 Συνταγές Για Κατάψυξη</div><div class="trnk-bval">€6</div><div class="trnk-bfree">Σήμερα Δωρεάν</div></div>
+<div class="trnk-bonus"><div class="trnk-thumb" style="border-radius:10px;overflow:hidden;box-shadow:0 8px 16px rgba(20,30,50,.14)"><img src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/trnk-b7-gr.png" alt="Εβδομαδιαίο Πλάνο Διατροφής" style="width:100%;display:block;aspect-ratio:9/16;object-fit:cover"></div><div class="trnk-bname">📅 Εβδομαδιαίο Πλάνο Διατροφής</div><div class="trnk-bval">€7</div><div class="trnk-bfree">Σήμερα Δωρεάν</div></div>
+<div class="trnk-bonus"><div class="trnk-thumb" style="border-radius:10px;overflow:hidden;box-shadow:0 8px 16px rgba(20,30,50,.14)"><img src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/trnk-b8-gr.png" alt="Συνταγές FIT" style="width:100%;display:block;aspect-ratio:9/16;object-fit:cover"></div><div class="trnk-bname">💪 Συνταγές FIT</div><div class="trnk-bval">€6</div><div class="trnk-bfree">Σήμερα Δωρεάν</div></div>
+<div class="trnk-bonus is-wide"><div class="trnk-thumb" style="max-width:200px;margin:0 auto 12px;border-radius:10px;overflow:hidden;box-shadow:0 8px 16px rgba(20,30,50,.14)"><img src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/trnk-bsorpresa-gr.png" alt="Bonus Sorpresa" style="width:100%;display:block;aspect-ratio:9/16;object-fit:cover;filter:blur(8px)"></div><div class="trnk-bname">🎁 Έκπληξη-Δώρο — Αποκαλύπτεται με την αγορά. Κάτι που δεν περιμένεις και θα αγαπήσεις.</div><div class="trnk-bval">€8</div><div class="trnk-bfree">Σήμερα Δωρεάν</div></div>
+</div>
+<div class="trnk-bonus-total"><span>🎁 Συνολική αξία οδηγών: €63 — ΣΉΜΕΡΑ ΔΩΡΕΆΝ</span></div>
+</div>
+</section>
+
+<!-- 8. GALLERY (φωτογραφίες πιάτων Pexels) -->
+<section>
+<div class="trnk-divider" aria-hidden="true"><span>📸</span></div>
+<div class="trnk-wrap-wide">
+<div class="trnk-gal-head">
+<h2 style="font-size:26px;text-align:center;margin-bottom:10px;">Γεύματα <span class="trnk-hl">νόστιμα & αντιφλεγμονώδη</span></h2>
+<p style="font-size:15px;color:var(--trnk-ink-soft);text-align:center;">Απλά, πολύχρωμα και γρήγορα — για κάθε μέρα της εβδομάδας.</p>
+</div>
+<div class="trnk-gal-track">
+<div class="trnk-gal-card"><img src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/gal-1.jpg" alt="Σαλάτα" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:12px"><span class="trnk-gal-label">Σαλάτα</span></div>
+<div class="trnk-gal-card"><img src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/gal-2.jpg" alt="Smoothie" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:12px"><span class="trnk-gal-label">Smoothie</span></div>
+<div class="trnk-gal-card"><img src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/gal-3.jpg" alt="Λαχανικά" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:12px"><span class="trnk-gal-label">Λαχανικά</span></div>
+<div class="trnk-gal-card"><img src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/gal-4.jpg" alt="Πρωινό" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:12px"><span class="trnk-gal-label">Πρωινό</span></div>
+<div class="trnk-gal-card"><img src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/gal-5.jpg" alt="Γεύμα" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:12px"><span class="trnk-gal-label">Γεύμα</span></div>
+<div class="trnk-gal-card"><img src="https://entregas-digitales.github.io/trogeniose-gr/covers-gr/gal-6.jpg" alt="Υγεία" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:12px"><span class="trnk-gal-label">Υγεία</span></div>
+</div>
+<div class="trnk-gal-hint"><span>Σύρε για να δεις περισσότερα</span><span class="trnk-arrow-anim">→</span></div>
+</div>
+</section>
+
+<!-- 9. ΤΙ ΘΑ ΠΕΤΥΧΕΙΣ (αντί για testimonials) -->
+<section class="trnk-alt">
+<div class="trnk-divider" aria-hidden="true"><span>🌟</span></div>
+<div class="trnk-wrap">
+<div class="trnk-center">
+<span class="trnk-eyebrow">Τι αλλάζει για σένα</span>
+<h2 style="font-size:22px;margin-top:12px;">Οι αλλαγές που <span class="trnk-hl">θα νιώσεις</span></h2>
+<span class="trnk-underline"></span>
+</div>
+<div class="trnk-results-grid">
+<div class="trnk-result"><div class="trnk-result-ic">🌿</div><strong>Λιγότερο φούσκωμα μετά το φαγητό</strong><p>Ακόμα και τις πρώτες ημέρες, πολλές γυναίκες νιώθουν άμεση διαφορά στην ελαφρότητα.</p></div>
+<div class="trnk-result"><div class="trnk-result-ic">📅</div><strong>Ξέρεις πάντα τι να μαγειρέψεις</strong><p>Τέλος στην ερώτηση «τι θα φάμε σήμερα;» — το πλάνο λύνει το πρόβλημα μια για πάντα.</p></div>
+<div class="trnk-result"><div class="trnk-result-ic">🍫</div><strong>Γλυκά και σνακ χωρίς ενοχές</strong><p>Νόστιμες παρασκευές χωρίς ζάχαρη που δεν σε κάνουν να νιώθεις ότι κάνεις δίαιτα.</p></div>
+<div class="trnk-result"><div class="trnk-result-ic">⚡</div><strong>Περισσότερη ενέργεια στην καθημερινότητα</strong><p>Η τροφή σε φορτίζει αντί να σε βαραίνει — διαφορά που νιώθεις καθημερινά.</p></div>
+<div class="trnk-result"><div class="trnk-result-ic">⏱️</div><strong>Λειτουργεί ακόμα και τις πιο κουρασμένες εβδομάδες</strong><p>Γρήγορες συνταγές που δε χρειάζονται ώρες στην κουζίνα.</p></div>
+<div class="trnk-result"><div class="trnk-result-ic">🔥</div><strong>Ιδανικό για το ελληνικό καλοκαίρι</strong><p>Υγιεινές συνταγές σχάρας και δροσερά smoothies για τις ζεστές μέρες.</p></div>
+</div>
+</div>
+</section>
+
+<!-- 10. ΠΡΟΣΦΟΡΑ (μόνο κουμπί προς /checkout) -->
+<section class="trnk-alt" id="trnk-offer">
+<div class="trnk-divider" aria-hidden="true"><span>🎯</span></div>
+<div class="trnk-wrap">
+<div class="trnk-offer-box">
+<div class="trnk-offer-visual">
+<img src="https://entregas-digitales.github.io/trogeniose-gr/mockups/1-hero-trnk.png" alt="700+ Αντιφλεγμονώδεις Συνταγές — Πακέτο 10 Βιβλίων" style="width:100%;display:block;border-radius:16px">
+</div>
+<div class="trnk-center"><span class="trnk-eyebrow trnk-eyebrow-dark">Τιμή Λανσαρίσματος</span></div>
+<h3>Τρώγε &amp; Νιώσε Καλά 🌿 <span class="trnk-hl-y">+ 9 Δωρεάν Οδηγοί</span></h3>
+<div class="trnk-stack-caption">Όλα όσα λαμβάνεις</div>
+<ul class="trnk-stack">
+<li><span>700+ Αντιφλεγμονώδεις Συνταγές (Κύριο Ebook)</span><span class="trnk-inc">ΣΥΜΠΕΡΙΛΑΜΒΑΝΕΤΑΙ</span></li>
+<li class="is-bonus"><span>🎁 Αντιφλεγμονώδεις Συνταγές</span><span class="trnk-free">ΔΩΡΕΆΝ</span></li>
+<li class="is-bonus"><span>🎁 134 Ροφήματα &amp; Smoothies</span><span class="trnk-free">ΔΩΡΕΆΝ</span></li>
+<li class="is-bonus"><span>🎁 65 Επιδόρπια Χωρίς Ζάχαρη</span><span class="trnk-free">ΔΩΡΕΆΝ</span></li>
+<li class="is-bonus"><span>🎁 25 Ιδέες για Υγιεινό Brunch</span><span class="trnk-free">ΔΩΡΕΆΝ</span></li>
+<li class="is-bonus"><span>🎁 50 Υγιεινές Συνταγές Σχάρας</span><span class="trnk-free">ΔΩΡΕΆΝ</span></li>
+<li class="is-bonus"><span>🎁 70 Συνταγές Για Κατάψυξη</span><span class="trnk-free">ΔΩΡΕΆΝ</span></li>
+<li class="is-bonus"><span>🎁 Εβδομαδιαίο Πλάνο Διατροφής</span><span class="trnk-free">ΔΩΡΕΆΝ</span></li>
+<li class="is-bonus"><span>🎁 Συνταγές FIT</span><span class="trnk-free">ΔΩΡΕΆΝ</span></li>
+<li class="is-bonus"><span>🎁 Έκπληξη-Δώρο</span><span class="trnk-free">ΔΩΡΕΆΝ</span></li>
+</ul>
+<div class="trnk-stack-total">
+<div class="trnk-row"><span>Κανονική τιμή</span><span class="trnk-old">{{original_price}}</span></div>
+<div class="trnk-row is-final"><span>Σήμερα πληρώνεις</span><span>{{price}}</span></div>
+</div>
+<a href="/checkout" class="trnk-btn trnk-btn-yellow">ΘΕΛΩ ΤΗΝ ΠΡΟΣΒΑΣΗ ΜΟΥ ΤΩΡΑ</a>
+<div style="text-align:center;margin-top:10px;font-size:12px;color:#FFE9AE;font-weight:700">⚠️ Τιμή λανσαρίσματος — διαθέσιμη για περιορισμένο χρόνο</div>
+<div class="trnk-offer-trust"><span>🔒 Ασφαλής Πληρωμή</span><span>⚡ Άμεση Πρόσβαση</span><span>🛡️ 7 Ημέρες Εγγύηση</span></div>
+<div style="text-align:center;margin-top:12px;font-size:12px;color:#9FB3CC;font-weight:700" id="trnk-viewers">🔴 <span id="trnk-vcount">94</span> άτομα βλέπουν αυτή τη σελίδα τώρα</div>
+</div>
+</div>
+</section>
+
+<!-- 11. ΑΝΑΚΕΦΑΛΑΙΩΣΗ -->
+<section>
+<div class="trnk-divider" aria-hidden="true"><span>🧾</span></div>
+<div class="trnk-wrap">
+<h2 class="trnk-center" style="font-size:22px;">Ανακεφαλαίωση της <span class="trnk-hl">αγοράς σου</span></h2>
+<div class="trnk-summary-items">
+<p class="trnk-sl-tit">🌿 Τι περιέχει το Τρώγε &amp; Νιώσε Καλά;</p>
+<div class="trnk-sl-grid">
+<div class="trnk-sl-li"><i>✦</i> 700+ αντιφλεγμονώδεις συνταγές</div>
+<div class="trnk-sl-li"><i>✦</i> Πρωινά &amp; σνακ ενέργειας</div>
+<div class="trnk-sl-li"><i>✦</i> Επιδόρπια χωρίς ζάχαρη</div>
+<div class="trnk-sl-li"><i>✦</i> Γρήγορα σνακ χωρίς ενοχές</div>
+<div class="trnk-sl-li"><i>✦</i> Εναλλακτικές αλευριού &amp; ζάχαρης</div>
+<div class="trnk-sl-li"><i>✦</i> Πλήρη γεύματα χωρίς γλουτένη</div>
+</div>
+</div>
+<div class="trnk-summary-box">
+<div class="trnk-summary-row"><span>✅ Κύριο ebook: 700+ συνταγές</span><span>Συμπεριλαμβάνεται</span></div>
+<div class="trnk-summary-row"><span>🎁 9 δωρεάν οδηγοί (€63 αξία)</span><span>Δωρεάν</span></div>
+<div class="trnk-summary-row is-total"><span>Τιμή σήμερα</span><span>{{price}}</span></div>
+</div>
+<div class="trnk-guarantee">
+<div class="trnk-ic">🛡️</div>
+<h4>7 ημέρες εγγύηση, χωρίς ρίσκο</h4>
+<p>Αν το Τρώγε &amp; Νιώσε Καλά δεν είναι για σένα, ζήτα επιστροφή χρημάτων μέσα σε 7 ημέρες από την αγορά. Χωρίς ερωτήσεις, χωρίς περιπλοκές — επιστρέφουμε τα χρήματα ολοσχερώς.</p>
+</div>
+</div>
+</section>
+
+<!-- 12. FAQ -->
+<section class="trnk-alt">
+<div class="trnk-divider" aria-hidden="true"><span>❓</span></div>
+<div class="trnk-wrap">
+<div class="trnk-center" style="margin-bottom:22px;">
+<span class="trnk-eyebrow">Συχνές ερωτήσεις</span>
+<h2 style="font-size:22px;margin-top:12px;">Έχεις <span class="trnk-hl">απορίες;</span></h2>
+<span class="trnk-underline"></span>
+</div>
+<div class="trnk-faq-item"><div class="trnk-faq-q" tabindex="0"><span>Χρειάζομαι γνώσεις μαγειρικής για να χρησιμοποιήσω αυτόν τον οδηγό;</span><span class="trnk-plus">+</span></div><div class="trnk-faq-a">Όχι, καθόλου. Οι συνταγές εξηγούνται βήμα-βήμα και είναι σχεδιασμένες για απλούς ανθρώπους που θέλουν να τρώνε καλύτερα χωρίς να περιπλέκονται. Δεν χρειάζεσαι εμπειρία ούτε ειδικό εξοπλισμό.</div></div>
+<div class="trnk-faq-item"><div class="trnk-faq-q" tabindex="0"><span>Τα υλικά βρίσκονται εύκολα στην Ελλάδα;</span><span class="trnk-plus">+</span></div><div class="trnk-faq-a">Ναι. Όλες οι συνταγές χρησιμοποιούν κοινά υλικά που βρίσκεις σε οποιοδήποτε σούπερ μάρκετ ή λαϊκή αγορά. Επίσης περιλαμβάνουμε εναλλακτικές και υποκαταστάτες για να μπορείς να τις προσαρμόσεις εύκολα.</div></div>
+<div class="trnk-faq-item"><div class="trnk-faq-q" tabindex="0"><span>Πότε λαμβάνω πρόσβαση;</span><span class="trnk-plus">+</span></div><div class="trnk-faq-a">Αμέσως μετά την πληρωμή. Λαμβάνεις τα πάντα μέσω email και μπορείς να τα δεις από το κινητό, το tablet ή τον υπολογιστή σου.</div></div>
+<div class="trnk-faq-item"><div class="trnk-faq-q" tabindex="0"><span>Οι συνταγές είναι χωρίς γλουτένη και χωρίς ζάχαρη;</span><span class="trnk-plus">+</span></div><div class="trnk-faq-a">Ναι. Όλο το περιεχόμενο είναι σχεδιασμένο να σε βοηθήσει να μειώσεις τη φλεγμονή αποφεύγοντας τα επεξεργασμένα αλεύρια και την προστιθέμενη ζάχαρη.</div></div>
+<div class="trnk-faq-item"><div class="trnk-faq-q" tabindex="0"><span>Σε πόσο καιρό μπορώ να δω αλλαγές;</span><span class="trnk-plus">+</span></div><div class="trnk-faq-a">Πολλά άτομα νιώθουν λιγότερο φούσκωμα και μεγαλύτερη ελαφρότητα μέσα στις πρώτες ημέρες. Κάθε σώμα είναι διαφορετικό, αλλά η βελτίωση της διατροφής συνήθως φέρνει γρήγορα αποτελέσματα.</div></div>
+<div class="trnk-faq-item"><div class="trnk-faq-q" tabindex="0"><span>Έχει εγγύηση;</span><span class="trnk-plus">+</span></div><div class="trnk-faq-a">Ναι. Έχεις 7 ημέρες εγγύηση. Αν νιώσεις ότι δεν είναι για σένα, σου επιστρέφουμε τα χρήματα ολοσχερώς. Χωρίς ερωτήσεις, χωρίς περιπλοκές.</div></div>
+</div>
+</section>
+
+<!-- 13. FINAL CTA -->
+<section class="trnk-final">
+<div class="trnk-divider" aria-hidden="true"><span>🚀</span></div>
+<div class="trnk-wrap">
+<h2>Ξεκίνα σήμερα να νιώθεις πιο ελαφριά<br>μετά από κάθε γεύμα</h2>
+<p class="trnk-sub" style="margin-top:12px;">700+ συνταγές χωρίς γλουτένη & ζάχαρη για να σταματήσεις τη φλεγμονή και να ξαναπολαύσεις το φαγητό.</p>
+<a href="#trnk-offer" class="trnk-btn trnk-btn-yellow" style="max-width:480px;margin:0 auto 10px;">Θέλω να Αποφλεγμονωθώ →</a>
+<p class="trnk-btn-note">🔒 Ασφαλής πληρωμή · Άμεση πρόσβαση · Εγγύηση 7 ημερών</p>
+</div>
+</section>
+
+</div><!-- /.trnk -->
+
+<script>
+(function(){
+  // Viewer count simulation
+  (function(){
+    var el=document.getElementById('trnk-vcount');
+    if(!el)return;
+    var base=Math.floor(Math.random()*30)+80;
+    el.textContent=base;
+    setInterval(function(){
+      var delta=Math.random()<0.5?1:-1;
+      base=Math.max(60,Math.min(140,base+delta));
+      if(el)el.textContent=base;
+    },7000);
+  })();
+
+  // FAQ accordion
+  document.querySelectorAll('.trnk-faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=q.closest('.trnk-faq-item');
+      item.classList.toggle('is-open');
+    });
+    q.addEventListener('keydown',function(e){
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();q.click();}
+    });
+  });
+})();
+</script>
