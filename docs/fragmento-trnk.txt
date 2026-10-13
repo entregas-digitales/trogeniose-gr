@@ -492,9 +492,7 @@ html{scroll-behavior:smooth}
 <div class="trnk-divider" aria-hidden="true"><span>🎯</span></div>
 <div class="trnk-wrap">
 <div class="trnk-offer-box">
-<div class="trnk-offer-visual">
-<img src="https://entregas-digitales.github.io/trogeniose-gr/mockups/1-hero-trnk.png" alt="700+ Αντιφλεγμονώδεις Συνταγές — Πακέτο 10 Βιβλίων" style="width:100%;display:block;border-radius:16px">
-</div>
+<div class="trnk-offer-visual" style="background:url('https://entregas-digitales.github.io/trogeniose-gr/mockups/1-hero-trnk.png') center/cover no-repeat;aspect-ratio:3/2;border-radius:16px;max-width:360px;margin:0 auto 22px;box-shadow:0 20px 40px rgba(0,0,0,.40)"></div>
 <div class="trnk-center"><span class="trnk-eyebrow trnk-eyebrow-dark">Τιμή Λανσαρίσματος</span></div>
 <h3>Τρώγε &amp; Νιώσε Καλά 🌿 <span class="trnk-hl-y">+ 9 Δωρεάν Οδηγοί</span></h3>
 <div class="trnk-stack-caption">Όλα όσα λαμβάνεις</div>
